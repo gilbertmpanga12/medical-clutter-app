@@ -1,9 +1,10 @@
 import 'package:clutter/screens/history_screen.dart';
 import 'package:clutter/screens/profiles_screen.dart';
 import 'package:clutter/screens/sign_in_screen.dart';
-import 'package:clutter/screens/storerecords_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'dashboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     var bottomNavigationBarItems = <BottomNavigationBarItem>[
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
         case 0:
           return HistoryScreen();
         case 1:
-          return StoreMedicalRecordsScreen();
+          return DashboardScreen();
         case 2:
           return ProfileScreen();
       }
@@ -66,5 +67,11 @@ class _HomeScreenState extends State<HomeScreen> {
           selectedItemColor: Colors.white,
           backgroundColor: Colors.purple[700]),
     );
+  }
+
+  @override
+  void dispose() {
+    _currentIndex = 1;
+    super.dispose();
   }
 }
