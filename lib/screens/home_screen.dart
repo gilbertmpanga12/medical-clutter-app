@@ -3,7 +3,8 @@ import 'package:clutter/screens/profiles_screen.dart';
 import 'package:clutter/screens/sign_in_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
+import 'package:bottom_animation/bottom_animation.dart';
 import 'dashboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,8 +14,16 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 1;
+  var items = <BottomNavItem>[
+    BottomNavItem(title: 'History', iconData: CupertinoIcons.collections_solid),
+    BottomNavItem(title: 'Records', iconData: CupertinoIcons.add),
+    BottomNavItem(title: 'Setting', iconData: CupertinoIcons.profile_circled),
+    BottomNavItem(title: 'Home', iconData: CupertinoIcons.home)
+  ];
+
   @override
   Widget build(BuildContext context) {
+    const _defaultTextColor = Color(0xff1F2937);
     var bottomNavigationBarItems = <BottomNavigationBarItem>[
       BottomNavigationBarItem(
         icon: const Icon(Icons.add_comment),
@@ -43,29 +52,44 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return Scaffold(
+      // backgroundColor: const Color(0xffF9FAFB),
       appBar: AppBar(
-        backgroundColor: Colors.indigo[600],
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.amber,
         automaticallyImplyLeading: false,
         title: Text(
           'Medical Clutter',
-          style: TextStyle(color: Colors.white),
+          style: GoogleFonts.pacifico(
+            textStyle: TextStyle(
+                color: _defaultTextColor, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
-      body: toggleViews(context),
-      bottomNavigationBar: BottomNavigationBar(
-          showUnselectedLabels: true,
-          items: bottomNavigationBarItems,
-          currentIndex: 1,
-          type: BottomNavigationBarType.fixed,
-          selectedFontSize: 17.0,
-          unselectedFontSize: 17.0,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          selectedItemColor: Colors.white,
-          backgroundColor: Colors.purple[700]),
+      body: SafeArea(
+        child: toggleViews(context),
+      ),
+      bottomNavigationBar: BottomAnimation(
+        selectedIndex: _currentIndex,
+        items: items,
+        backgroundColor: Colors.amberAccent,
+        onItemSelect: (value) {
+          setState(() {
+            _currentIndex = value;
+          });
+        },
+        itemHoverColor: Colors.white,
+        itemHoverColorOpacity: .9,
+        activeIconColor: Colors.blueGrey,
+        deactiveIconColor: Colors.white.withOpacity(.9),
+        barRadius: 40,
+        textStyle: TextStyle(
+          color: Colors.blueGrey,
+          fontWeight: FontWeight.bold,
+        ),
+        itemHoverWidth: 130,
+        itemHoverBorderRadius: 40,
+      ),
     );
   }
 
