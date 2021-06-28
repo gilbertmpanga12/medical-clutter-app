@@ -21,7 +21,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Container(
-              // height: 150.0,
+              height: 110.0,
               child: Column(
                 children: [
                   Row(
@@ -113,7 +113,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   height: 90.0,
                   child: ListTile(
                     leading: Icon(Icons.notes),
-                    title: Text('Doctors notes and summaries',
+                    title: Text('Doctors notes & summaries',
                         style: TextStyle(
                             color: _defaultTextColor,
                             fontWeight: FontWeight.w600)),

@@ -15,29 +15,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 1;
   var items = <BottomNavItem>[
-    BottomNavItem(title: 'History', iconData: CupertinoIcons.collections_solid),
-    BottomNavItem(title: 'Records', iconData: CupertinoIcons.add),
-    BottomNavItem(title: 'Setting', iconData: CupertinoIcons.profile_circled),
-    BottomNavItem(title: 'Home', iconData: CupertinoIcons.home)
+    BottomNavItem(title: 'Records', iconData: CupertinoIcons.collections),
+    BottomNavItem(title: 'Services', iconData: Icons.medical_services),
+    BottomNavItem(title: 'Setting', iconData: CupertinoIcons.profile_circled)
   ];
 
   @override
   Widget build(BuildContext context) {
     const _defaultTextColor = Color(0xff1F2937);
-    var bottomNavigationBarItems = <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-        icon: const Icon(Icons.add_comment),
-        label: 'History',
-      ),
-      BottomNavigationBarItem(
-        icon: const Icon(Icons.calendar_today),
-        label: 'Store Records',
-      ),
-      BottomNavigationBarItem(
-        icon: const Icon(Icons.account_circle),
-        label: 'Profile',
-      ),
-    ];
 
     Widget toggleViews(BuildContext context) {
       switch (_currentIndex) {
