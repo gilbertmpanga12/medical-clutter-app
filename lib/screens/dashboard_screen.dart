@@ -44,7 +44,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ),
                     ),
                   ),
-                  onTap: () => null,
+                  onTap: () => Navigator.pushNamed(context, item.route),
                 ))
             .toList(),
       );
