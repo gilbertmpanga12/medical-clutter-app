@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 1;
   var items = <BottomNavItem>[
-    BottomNavItem(title: 'Records', iconData: CupertinoIcons.collections),
+    BottomNavItem(title: 'Records', iconData: CupertinoIcons.folder),
     BottomNavItem(title: 'Services', iconData: Icons.medical_services),
     BottomNavItem(title: 'Setting', iconData: CupertinoIcons.profile_circled)
   ];

@@ -69,58 +69,67 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           Column(
             children: [
-              Card(
-                elevation: 3.0,
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(8.5),
-                  height: 90.0,
-                  child: ListTile(
-                    leading: Icon(Icons.monetization_on_rounded),
-                    title: Text(
-                      'Medical bills',
-                      style: TextStyle(
-                          color: _defaultTextColor,
-                          fontWeight: FontWeight.w600),
+              InkWell(
+                child: Card(
+                  elevation: 3.0,
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(8.5),
+                    height: 90.0,
+                    child: ListTile(
+                      leading: Icon(Icons.monetization_on_rounded),
+                      title: Text(
+                        'Medical bills',
+                        style: TextStyle(
+                            color: _defaultTextColor,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      subtitle: Text('Allows you to keep track of receipts.'),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded),
                     ),
-                    subtitle: Text('Allows you to keep track of receipts.'),
-                    trailing: Icon(Icons.arrow_forward_ios_rounded),
                   ),
                 ),
+                onTap: () => null,
               ),
-              Card(
-                elevation: 3.0,
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(8.5),
-                  height: 90.0,
-                  child: ListTile(
-                    leading: Icon(Icons.biotech),
-                    title: Text('Screenings',
-                        style: TextStyle(
-                            color: _defaultTextColor,
-                            fontWeight: FontWeight.w600)),
-                    subtitle: Text('Store tabular data, medical images.'),
-                    trailing: Icon(Icons.arrow_forward_ios_rounded),
+              InkWell(
+                child: Card(
+                  elevation: 3.0,
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(8.5),
+                    height: 90.0,
+                    child: ListTile(
+                      leading: Icon(Icons.biotech),
+                      title: Text('Screenings',
+                          style: TextStyle(
+                              color: _defaultTextColor,
+                              fontWeight: FontWeight.w600)),
+                      subtitle: Text('Store tabular data, medical images.'),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                    ),
                   ),
                 ),
+                onTap: () => null,
               ),
-              Card(
-                elevation: 3.0,
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(8.5),
-                  height: 90.0,
-                  child: ListTile(
-                    leading: Icon(Icons.notes),
-                    title: Text('Doctors notes & summaries',
-                        style: TextStyle(
-                            color: _defaultTextColor,
-                            fontWeight: FontWeight.w600)),
-                    subtitle: Text('Store screening summaries.'),
-                    trailing: Icon(Icons.arrow_forward_ios_rounded),
+              InkWell(
+                child: Card(
+                  elevation: 3.0,
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(8.5),
+                    height: 90.0,
+                    child: ListTile(
+                      leading: Icon(Icons.notes),
+                      title: Text('Doctors notes & summaries',
+                          style: TextStyle(
+                              color: _defaultTextColor,
+                              fontWeight: FontWeight.w600)),
+                      subtitle: Text('Store screening summaries.'),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                    ),
                   ),
                 ),
+                onTap: () => null,
               ),
             ],
           )
