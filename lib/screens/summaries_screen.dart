@@ -9,10 +9,14 @@ class MedicalSummaries extends StatefulWidget {
 class _MedicalSummariesState extends State<MedicalSummaries> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'Medical Summaries',
-        style: TextStyle(color: Colors.red, fontSize: 56.0),
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          child: Text(
+            'Medical Summaries',
+            style: TextStyle(color: Colors.red, fontSize: 56.0),
+          ),
+        ),
       ),
     );
   }

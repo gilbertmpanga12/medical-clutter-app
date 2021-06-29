@@ -9,10 +9,14 @@ class MedicalBillsScreens extends StatefulWidget {
 class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'Medical bills',
-        style: TextStyle(color: Colors.red, fontSize: 56.0),
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          child: Text(
+            'Medical bills',
+            style: TextStyle(color: Colors.red, fontSize: 56.0),
+          ),
+        ),
       ),
     );
   }

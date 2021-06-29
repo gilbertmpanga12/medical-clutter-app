@@ -9,10 +9,14 @@ class Screenings extends StatefulWidget {
 class _ScreeningsState extends State<Screenings> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'Screenings',
-        style: TextStyle(color: Colors.red, fontSize: 56.0),
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          child: Text(
+            'Screenings',
+            style: TextStyle(color: Colors.red, fontSize: 56.0),
+          ),
+        ),
       ),
     );
   }
