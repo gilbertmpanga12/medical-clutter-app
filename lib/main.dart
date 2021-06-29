@@ -1,8 +1,11 @@
 import 'package:clutter/screens/categories_screen.dart';
 import 'package:clutter/screens/home_screen.dart';
+import 'package:clutter/screens/medical_bills_screen.dart';
+import 'package:clutter/screens/screenings.dart';
 import 'package:clutter/screens/sign_in_screen.dart';
 import 'package:clutter/screens/sign_up_screen.dart';
 import 'package:clutter/screens/storerecords_screen.dart';
+import 'package:clutter/screens/summaries_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,7 +39,10 @@ class MyApp extends StatelessWidget {
         '/': (context) => HomeScreen(),
         '/signup': (context) => SignInScreen(),
         '/signin': (context) => SignUpScreen(),
-        '/store-record': (context) => StoreMedicalRecordsScreen()
+        '/store-record': (context) => StoreMedicalRecordsScreen(),
+        '/medical-bills': (context) => MedicalBillsScreens(),
+        '/screenings': (context) => Screenings(),
+        '/doctors-notes': (context) => MedicalSummaries()
       },
     );
   }
