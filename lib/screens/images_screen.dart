@@ -11,14 +11,20 @@ class _MedicalImagesScreenState extends State<MedicalImagesScreen> {
   var _defaultTextColor = Color(0xff1F2937);
   List<String> images = [
     "https://www.itnonline.com/sites/default/files/GettyImages-182344111.jpg",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82",
-    "https://firebasestorage.googleapis.com/v0/b/lasereyes-llc.appspot.com/o/folder2.jpg?alt=media&token=9e400172-5b4b-4ca5-acbe-a7d6105eff82"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaHq40GJ78gC2cZV7SUckabq1Kwr0qkBVl6Tm-S37u3J5ydB6J_WD7hxtX_JiH9bwcf8&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhaU6RzjbH4YwvXxlzRPcwxRavzctjIgoW_w&usqp=CAU",
+    "https://www.itnonline.com/sites/default/files/GettyImages-182344111.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaHq40GJ78gC2cZV7SUckabq1Kwr0qkBVl6Tm-S37u3J5ydB6J_WD7hxtX_JiH9bwcf8&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhaU6RzjbH4YwvXxlzRPcwxRavzctjIgoW_w&usqp=CAU"
+  ];
+
+  List<String> names = [
+    'CT scan',
+    'MRI',
+    'Mamogram',
+    'CT scan',
+    'MRI',
+    'Mamogram'
   ];
 
   GridView imageMedicalDocuments(List<String> images) => GridView.builder(
@@ -39,8 +45,12 @@ class _MedicalImagesScreenState extends State<MedicalImagesScreen> {
               clipBehavior: Clip.antiAlias,
               child: GridTileBar(
                 backgroundColor: Colors.black45,
-                title: Text('CT Scan'),
-                subtitle: Text('Heart Failure'),
+                title: Text(
+                  names[i],
+                  style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.w500, fontSize: 16),
+                ),
+                subtitle: Text('Feb 20th 2021'),
               ),
             ),
             child: Material(
