@@ -51,7 +51,49 @@ class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
           ),
           floatingActionButton: FloatingActionButton.extended(
             onPressed: () {
-              print('xxxx');
+              showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        ListTile(
+                          leading: new Icon(Icons.edit),
+                          title: new Text(
+                            'Manually enter records',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17),
+                          ),
+                          subtitle: Text(
+                            'Enables to use an enditor and store records.',
+                          ),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        ListTile(
+                          leading: new Icon(Icons.document_scanner),
+                          title: new Text('Use camera to enter records',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 17)),
+                          subtitle: Text(
+                              'Uses our photo recognition AI to store records for you.'),
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                        SizedBox(
+                          height: 40,
+                        )
+                      ],
+                    );
+                  });
             },
             label: Text('ADD RECORD',
                 style: GoogleFonts.montserrat(
