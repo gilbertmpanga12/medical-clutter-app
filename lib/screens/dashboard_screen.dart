@@ -37,9 +37,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           item.title,
                           style: TextStyle(
                               color: _defaultTextColor,
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18),
                         ),
-                        subtitle: Text(item.subtitle),
+                        subtitle: Padding(
+                          child: Text(item.subtitle),
+                          padding: EdgeInsets.only(top: 4.0),
+                        ),
                         trailing: Icon(Icons.arrow_forward_ios_rounded),
                       ),
                     ),

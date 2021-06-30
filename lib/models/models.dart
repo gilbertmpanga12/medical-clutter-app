@@ -8,3 +8,10 @@ class ServicesActions {
 
   ServicesActions(this.title, this.subtitle, this.icon, this.route);
 }
+
+class MedicalText {
+  String title;
+  String description;
+  String date;
+  MedicalText(this.title, this.description, this.date);
+}
