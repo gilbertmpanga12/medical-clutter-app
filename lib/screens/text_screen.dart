@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextScreen extends StatefulWidget {
+  final String operationType;
+  const TextScreen({Key? key, required this.operationType}) : super(key: key);
   @override
   _TextScreenState createState() => _TextScreenState();
 }
@@ -12,6 +14,7 @@ class _TextScreenState extends State<TextScreen> {
   var _defaultTextColor = Color(0xff1F2937);
   var _indicatorColor = Color(0xff111827);
   late List<MedicalText> medicalTextDocuments;
+  late String searchQuery;
   List<MedicalText> getMedicalTextDocuments() {
     return [
       MedicalText("CT scan", "Feb-22-2021 CT scan at St Hopkins", "2030-11-11"),
@@ -29,6 +32,7 @@ class _TextScreenState extends State<TextScreen> {
   @override
   void initState() {
     medicalTextDocuments = getMedicalTextDocuments();
+    //toggle between operations
     super.initState();
   }
 

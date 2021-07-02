@@ -5,8 +5,10 @@ class ServicesActions {
   String subtitle;
   Widget icon;
   String route;
+  String operationType;
 
-  ServicesActions(this.title, this.subtitle, this.icon, this.route);
+  ServicesActions(
+      this.title, this.subtitle, this.icon, this.route, this.operationType);
 }
 
 class MedicalText {
@@ -15,3 +17,10 @@ class MedicalText {
   String date;
   MedicalText(this.title, this.description, this.date);
 }
+
+class OperationType {
+  String operationType;
+  OperationType(this.operationType);
+}
+
+// Opertions => history | medical_bills | screenings | medical_summaries

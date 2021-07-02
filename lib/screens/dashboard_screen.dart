@@ -13,12 +13,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     const _defaultTextColor = Color(0xff1F2937);
     List<ServicesActions> _cardActions = [
-      ServicesActions("Medical bills", "Allows you to keep track of receipts.",
-          Icon(Icons.monetization_on_rounded), '/medical-bills'),
+      ServicesActions(
+          "Medical bills",
+          "Allows you to keep track of receipts.",
+          Icon(Icons.monetization_on_rounded),
+          '/medical-bills',
+          "medical_bills"),
       ServicesActions("Screenings", "Store tabular data, medical images.",
-          Icon(Icons.biotech), "/screenings"),
+          Icon(Icons.biotech), "/screenings", "screenings"),
       ServicesActions("Doctors notes & summaries", "Store screening summaries.",
-          Icon(Icons.notes_sharp), "/doctors-notes"),
+          Icon(Icons.notes_sharp), "/medical-bills", "medical_summaries"),
     ];
 
     Widget _listServiceActions() {
@@ -48,7 +52,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ),
                     ),
                   ),
-                  onTap: () => Navigator.pushNamed(context, item.route),
+                  onTap: () async => await Navigator.pushNamed(
+                      context, item.route,
+                      arguments: OperationType(item.operationType)),
                 ))
             .toList(),
       );

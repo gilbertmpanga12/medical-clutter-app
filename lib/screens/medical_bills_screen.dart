@@ -2,7 +2,7 @@ import 'package:clutter/screens/text_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:clutter/models/models.dart';
 import 'images_screen.dart';
 
 class MedicalBillsScreens extends StatefulWidget {
@@ -15,15 +15,28 @@ class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
     Tab(text: 'TEXT'),
     Tab(text: 'IMAGES'),
   ];
-  final List features = [TextScreen(), MedicalImagesScreen()];
   //var _defaultTextColor = Color(0xff374151);
   var _indicatorColor = Color(0xff111827);
   @override
   Widget build(BuildContext context) {
+    final operation =
+        ModalRoute.of(context)!.settings.arguments as OperationType;
+    final List features = [
+      TextScreen(
+        operationType: operation.operationType,
+      ),
+      MedicalImagesScreen(operationType: operation.operationType)
+    ];
+
+    String appBarTitle() => operation.operationType == "medical_bills"
+        ? "Medical Bills"
+        : "Doctor\'s notes & summaries";
+
     return DefaultTabController(
       child: Scaffold(
           appBar: AppBar(
               iconTheme: IconThemeData(color: _indicatorColor),
+              centerTitle: true,
               bottom: TabBar(
                 tabs: tabs,
                 indicatorColor: _indicatorColor,
@@ -34,7 +47,7 @@ class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
                     GoogleFonts.montserrat(fontWeight: FontWeight.w400),
               ),
               title: Text(
-                'Medical Bills',
+                appBarTitle(),
                 style: GoogleFonts.montserrat(
                   textStyle: TextStyle(
                       color: _indicatorColor, fontWeight: FontWeight.w500),

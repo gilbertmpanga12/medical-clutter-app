@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MedicalImagesScreen extends StatefulWidget {
+  final String operationType;
+  const MedicalImagesScreen({Key? key, required this.operationType})
+      : super(key: key);
   @override
   _MedicalImagesScreenState createState() => _MedicalImagesScreenState();
 }
 
 class _MedicalImagesScreenState extends State<MedicalImagesScreen> {
-  var _defaultTextColor = Color(0xff1F2937);
+  // var _defaultTextColor = Color(0xff1F2937);
   List<String> images = [
     "https://www.itnonline.com/sites/default/files/GettyImages-182344111.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaHq40GJ78gC2cZV7SUckabq1Kwr0qkBVl6Tm-S37u3J5ydB6J_WD7hxtX_JiH9bwcf8&usqp=CAU",
@@ -26,6 +29,13 @@ class _MedicalImagesScreenState extends State<MedicalImagesScreen> {
     'MRI',
     'Mamogram'
   ];
+
+  @override
+  void initState() {
+    //toggle between operations
+    // switch(){}
+    super.initState();
+  }
 
   GridView imageMedicalDocuments(List<String> images) => GridView.builder(
       itemCount: images.length,
