@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   var items = <BottomNavItem>[
     BottomNavItem(title: 'Records', iconData: CupertinoIcons.folder),
     BottomNavItem(title: 'Services', iconData: Icons.medical_services),
-    BottomNavItem(title: 'Setting', iconData: CupertinoIcons.profile_circled)
+    BottomNavItem(title: 'Settings', iconData: CupertinoIcons.settings)
   ];
 
   @override
