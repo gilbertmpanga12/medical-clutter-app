@@ -67,8 +67,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       child: Text(item.subtitle),
                                       padding: EdgeInsets.only(top: 4.0),
                                     ),
-                                    trailing:
-                                        Icon(Icons.arrow_forward_ios_rounded),
+                                    trailing: Icon(Icons.edit),
                                   ),
                                 ),
                                 onTap: () async => await Navigator.pushNamed(
@@ -114,8 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       child: Text(item.subtitle),
                                       padding: EdgeInsets.only(top: 4.0),
                                     ),
-                                    trailing:
-                                        Icon(Icons.arrow_forward_ios_rounded),
+                                    trailing: Icon(Icons.edit),
                                   ),
                                 ),
                                 onTap: () async => await Navigator.pushNamed(
@@ -161,8 +159,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       child: Text(item.subtitle),
                                       padding: EdgeInsets.only(top: 4.0),
                                     ),
-                                    trailing:
-                                        Icon(Icons.arrow_forward_ios_rounded),
+                                    trailing: Icon(Icons.edit),
                                   ),
                                 ),
                                 onTap: () async => await Navigator.pushNamed(
@@ -193,10 +190,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 'PROFILE',
                 style: TextStyle(
                     color: _defaultTextColor,
-                    fontSize: 17.0,
+                    fontSize: 15.0,
                     fontWeight: FontWeight.w500),
               ),
-              padding: EdgeInsets.only(top: 20.0, bottom: 15.0, left: 8.0),
+              padding: EdgeInsets.only(top: 20.0, bottom: 15.0, left: 11.5),
             ),
             alignment: Alignment.centerLeft,
           ),
@@ -209,10 +206,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 'MEDICAL INFO',
                 style: TextStyle(
                     color: _defaultTextColor,
-                    fontSize: 17.0,
+                    fontSize: 15.0,
                     fontWeight: FontWeight.w500),
               ),
-              padding: EdgeInsets.only(top: 20.0, bottom: 15.0, left: 8.0),
+              padding: EdgeInsets.only(top: 20.0, bottom: 15.0, left: 11.5),
             ),
             alignment: Alignment.centerLeft,
           ),
@@ -225,10 +222,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 'CONTACTS',
                 style: TextStyle(
                     color: _defaultTextColor,
-                    fontSize: 17.0,
+                    fontSize: 15.0,
                     fontWeight: FontWeight.w500),
               ),
-              padding: EdgeInsets.only(top: 20.0, bottom: 15.0, left: 8.0),
+              padding: EdgeInsets.only(top: 20.0, bottom: 15.0, left: 11.5),
             ),
             alignment: Alignment.centerLeft,
           ),
