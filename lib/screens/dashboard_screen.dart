@@ -85,7 +85,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             style: TextStyle(
                               fontSize: _smallTextSize,
                               fontWeight: FontWeight.w400,
-                              color: const Color(0xFF6B7280),
+                              color:
+                                  _defaultTextColor, //const Color(0xFF6B7280)
                             ),
                             textAlign: TextAlign.left,
                           ),
@@ -102,7 +103,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                 ],
               ),
-              padding: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 20.0),
+              padding: EdgeInsets.only(top: 20.0, bottom: 20.0, left: 17.0),
             ),
           ),
           Container(
@@ -110,11 +111,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
               children: [
                 Text('CATEGORIES',
                     style: TextStyle(
-                        fontSize: _smallTextSize,
-                        color: const Color(0xFF6B7280)))
+                        fontSize: 15.0,
+                        color: _defaultTextColor)) //const Color(0xFF6B7280)
               ],
             ),
-            padding: EdgeInsets.only(top: 13.0, bottom: 13.0),
+            padding: EdgeInsets.only(top: 16.0, bottom: 13.0, left: 11.5),
           ),
           _listServiceActions()
         ],
