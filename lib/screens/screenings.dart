@@ -49,7 +49,9 @@ class _ScreeningsState extends State<Screenings> {
                         title: new Text(
                           'Manually enter records',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 17),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: _defaultTextColor),
                         ),
                         subtitle: Text(
                           'Enables to use an enditor and store records.',
@@ -60,12 +62,18 @@ class _ScreeningsState extends State<Screenings> {
                       ),
                       SizedBox(
                         height: 10.0,
+                        child: Divider(
+                          color: Color(0xffeeeeee),
+                          indent: 13.0,
+                        ),
                       ),
                       ListTile(
                         leading: new Icon(Icons.camera),
                         title: new Text('Use camera to enter records',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 17)),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: _defaultTextColor)),
                         subtitle: Text(
                             'Uses our photo recognition AI to store records for you.'),
                         onTap: () {
@@ -86,7 +94,6 @@ class _ScreeningsState extends State<Screenings> {
           icon: Icon(Icons.camera),
           backgroundColor: Colors.pink,
         ),
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.miniEndFloat);
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat);
   }
 }

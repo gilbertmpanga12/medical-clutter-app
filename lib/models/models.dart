@@ -23,4 +23,10 @@ class OperationType {
   OperationType(this.operationType);
 }
 
+class MedicalDocument {
+  String fullName = '';
+  String date = '';
+  String notes = '';
+  String picture = '';
+}
 // Opertions => history | medical_bills | screenings | medical_summaries

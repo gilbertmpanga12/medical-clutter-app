@@ -102,6 +102,10 @@ class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
                         ),
                         SizedBox(
                           height: 10.0,
+                          child: Divider(
+                            color: Color(0xffeeeeee),
+                            indent: 13.0,
+                          ),
                         ),
                         ListTile(
                           leading: new Icon(Icons.document_scanner),
@@ -128,8 +132,7 @@ class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
             icon: Icon(Icons.post_add),
             backgroundColor: Colors.pink,
           ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.miniEndFloat),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat),
       length: tabs.length,
     );
   }
