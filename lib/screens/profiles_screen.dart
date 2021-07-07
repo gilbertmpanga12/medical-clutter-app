@@ -43,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _listCardActions() {
     return Padding(
         child: Card(
-          elevation: 3.0,
+          elevation: 2.0,
           child: Column(
             children: [
               ...ListTile.divideTiles(
@@ -89,7 +89,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _listMedicalActions() {
     return Padding(
         child: Card(
-          elevation: 3.0,
+          elevation: 2.0,
           child: Column(
             children: [
               ...ListTile.divideTiles(
@@ -135,7 +135,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _listAddressActions() {
     return Padding(
         child: Card(
-          elevation: 3.0,
+          elevation: 2.0,
           child: Column(
             children: [
               ...ListTile.divideTiles(

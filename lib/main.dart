@@ -6,6 +6,7 @@ import 'package:clutter/screens/sign_in_screen.dart';
 import 'package:clutter/screens/sign_up_screen.dart';
 import 'package:clutter/screens/storerecords_screen.dart';
 import 'package:clutter/screens/summaries_screen.dart';
+import 'package:clutter/themes/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,17 +24,7 @@ class MyApp extends StatelessWidget {
     //     );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          textTheme: GoogleFonts.montserratTextTheme(
-            Theme.of(context).textTheme,
-          ),
-          cardTheme: CardTheme(
-            shape: RoundedRectangleBorder(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(8.0),
-              ),
-            ),
-          )),
+      theme: CustomTheme.lightTheme,
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
@@ -47,3 +38,18 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+/*
+ThemeData(
+          primaryColor: Colors.yellow[800],
+          accentColor: Colors.pink[600],
+          textTheme: GoogleFonts.montserratTextTheme(
+            Theme.of(context).textTheme,
+          ),
+          cardTheme: CardTheme(
+            shape: RoundedRectangleBorder(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(8.0),
+              ),
+            ),
+          ))*/

@@ -1,10 +1,8 @@
-import 'package:clutter/screens/history_screen.dart';
 import 'package:clutter/screens/profiles_screen.dart';
 import 'package:clutter/screens/sign_in_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:bottom_animation/bottom_animation.dart';
 import 'dashboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,31 +11,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 1;
-  var items = <BottomNavItem>[
-    BottomNavItem(title: 'Records', iconData: CupertinoIcons.folder),
-    BottomNavItem(title: 'Services', iconData: Icons.medical_services),
-    BottomNavItem(title: 'Settings', iconData: CupertinoIcons.settings)
+  int _currentIndex = 0;
+  var items = <BottomNavigationBarItem>[
+    BottomNavigationBarItem(
+      icon: const Icon(
+        CupertinoIcons.home,
+      ),
+      label: "Services",
+    ),
+    BottomNavigationBarItem(
+      icon: const Icon(Icons.account_circle),
+      label: "Settings",
+    )
   ];
 
   @override
   Widget build(BuildContext context) {
     const _defaultTextColor = Color(0xff1F2937);
-
     Widget toggleViews(BuildContext context) {
       switch (_currentIndex) {
         case 0:
-          return HistoryScreen();
-        case 1:
           return DashboardScreen();
-        case 2:
+        case 1:
           return ProfileScreen();
       }
       return SignInScreen();
     }
 
     return Scaffold(
-      // backgroundColor: const Color(0xffF9FAFB),
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
@@ -54,26 +55,26 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: toggleViews(context),
       ),
-      bottomNavigationBar: BottomAnimation(
-        selectedIndex: _currentIndex,
-        items: items,
-        backgroundColor: Colors.amberAccent,
-        onItemSelect: (value) {
-          setState(() {
-            _currentIndex = value;
-          });
-        },
-        itemHoverColor: Colors.white,
-        itemHoverColorOpacity: .9,
-        activeIconColor: Colors.blueGrey,
-        deactiveIconColor: Colors.white.withOpacity(.9),
-        barRadius: 40,
-        textStyle: TextStyle(
-          color: Colors.blueGrey,
-          fontWeight: FontWeight.bold,
-        ),
-        itemHoverWidth: 130,
-        itemHoverBorderRadius: 40,
+      bottomNavigationBar: Container(
+        child: BottomNavigationBar(
+            enableFeedback: true,
+            elevation: 0,
+            iconSize: 19.5,
+            showUnselectedLabels: true,
+            items: items,
+            currentIndex: _currentIndex,
+            type: BottomNavigationBarType.fixed,
+            onTap: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            selectedItemColor: Color(0xff111827),
+            unselectedItemColor: Color(0xff9CA3AF),
+            backgroundColor: Color(0xffFFFFFF)), //F9FAFB
+        decoration: BoxDecoration(
+            border:
+                Border(top: BorderSide(color: Color(0xffeeeeee), width: 1.1))),
       ),
     );
   }
