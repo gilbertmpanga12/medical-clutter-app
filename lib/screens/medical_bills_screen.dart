@@ -1,3 +1,4 @@
+import 'package:clutter/screens/create_screen.dart';
 import 'package:clutter/screens/text_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,17 @@ class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
   ];
   //var _defaultTextColor = Color(0xff374151);
   var _indicatorColor = Color(0xff111827);
+
+  static Route<void> _fullscreenDialogRoute(
+    BuildContext context,
+    Object? arguments,
+  ) {
+    return MaterialPageRoute<void>(
+      builder: (context) => CreateScreenDialog(),
+      fullscreenDialog: true,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final operation =
@@ -84,7 +96,8 @@ class _MedicalBillsScreensState extends State<MedicalBillsScreens> {
                             'Enables to use an enditor and store records.',
                           ),
                           onTap: () {
-                            Navigator.pop(context);
+                            Navigator.restorablePush<void>(
+                                context, _fullscreenDialogRoute);
                           },
                         ),
                         SizedBox(
